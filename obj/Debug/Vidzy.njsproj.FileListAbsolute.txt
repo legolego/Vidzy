@@ -1,0 +1,2 @@
+C:\gitProjects\Vidzy\obj\Debug\Vidzy.njsprojResolveAssemblyReference.cache
+C:\gitProjects\Vidzy\bin\Microsoft.NodejsTools.WebRole.dll
