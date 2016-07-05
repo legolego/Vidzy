@@ -9,9 +9,26 @@
         <label>Genre</label>
         <textarea class="form-control" ng-model="video.genre"></textarea>
     </div>
+
+  
+
     <div class="form-group">
         <label>Description</label>
         <textarea class="form-control" ng-model="video.description"></textarea>
     </div>
+
+
+
+    <div class="form-group" ng-controller="GenreCtrl">
+        <label>
+            Genre:
+            <select ng-model="myGenre" ng-options="genre.name for genre in genres"></select>
+        </label>
+    </div>
+
+
+    
+
+
     <input type="button" class="btn btn-primary" value="Save" ng-click="save()"></input>
 </form>

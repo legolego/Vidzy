@@ -17,6 +17,7 @@
   <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
   <ItemGroup>
     <Content Include="package.json" />
+    <Content Include="public\favicon.ico" />
     <Content Include="public\partials\home.html" />
     <Content Include="public\partials\video-delete.html" />
     <Content Include="public\partials\video-form.html" />
