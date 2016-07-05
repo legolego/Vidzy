@@ -12,6 +12,14 @@ router.get('/', function(req, res) {
     });
 });
 
+router.get('/', function (req, res) {
+    var collection = db.get('genres');
+    collection.find({}, function (err, videos) {
+        if (err) throw err;
+        res.json(genres);
+    });
+});
+
 router.get('/:id', function (req, res) {
     var collection = db.get('videos');
     collection.findOne({ _id: req.params.id }, function (err, video) {

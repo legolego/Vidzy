@@ -33,6 +33,34 @@ app.controller('HomeCtrl', ['$scope', '$resource',
         });
     }]);
 
+
+app.controller('GenreCtrl', ['$scope',
+
+//    function ($scope) {
+//    $scope.genres = [
+//        { name: 'Western', value: '1' },
+//        { name: 'Drama', value: '2', notAnOption: true },
+//        { name: 'Science Fiction', value: '3' },
+//        { name: 'Fantasy', value: '4', notAnOption: true },
+//        { name: 'Mystery', value: '5', notAnOption: false }
+//    ];
+//    $scope.myGenre = $scope.genres[0]; // red
+//}
+
+
+    function ($scope, $resource) {
+        var Genres = $resource('/api/genres');
+        Genres.query(function (genres) {
+            $scope.genres = genres;
+        });
+
+        //  $scope.myGenre = $scope.genres[0];
+    }
+
+
+
+]);
+
 app.controller('AddVideoCtrl', ['$scope', '$resource', '$location',
     function ($scope, $resource, $location) {
         $scope.save = function () {
@@ -75,13 +103,3 @@ app.controller('DeleteVideoCtrl', ['$scope', '$resource', '$location', '$routePa
         }
     }]);
 
-app.controller('GenreCtrl', ['$scope', function ($scope) {
-    $scope.genres = [
-        { name: 'Western', value: '1' },
-        { name: 'Drama', value: '2', notAnOption: true },
-        { name: 'Science Fiction', value: '3' },
-        { name: 'Fantasy', value: '4', notAnOption: true },
-        { name: 'Mystery', value: '5', notAnOption: false }
-    ];
-    $scope.myGenre = $scope.genres[0]; // red
-}]);

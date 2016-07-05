@@ -24,6 +24,7 @@
     <Content Include="README.md" />
     <Compile Include="app.js" />
     <Compile Include="public\javascripts\vidzy.js" />
+    <Compile Include="routes\genres.js" />
     <Compile Include="routes\index.js" />
     <Compile Include="routes\users.js" />
     <Compile Include="routes\videos.js" />

@@ -20,9 +20,11 @@
 
 
     <div class="form-group" ng-controller="GenreCtrl">
+        <p>selected item is : {{genreSelect}}</p>
+        <p> name of selected item is : {{genreSelect.name}} </p>
         <label>
             Genre:
-            <select ng-model="myGenre" ng-options="genre.name for genre in genres"></select>
+            <select class="form-control" ng-model="genreSelect" ng-options="genre.name for genre in genres"></select>
         </label>
     </div>
 
