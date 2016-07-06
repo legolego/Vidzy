@@ -34,19 +34,8 @@ app.controller('HomeCtrl', ['$scope', '$resource',
     }]);
 
 
-app.controller('GenreCtrl', ['$scope',
 
-//    function ($scope) {
-//    $scope.genres = [
-//        { name: 'Western', value: '1' },
-//        { name: 'Drama', value: '2', notAnOption: true },
-//        { name: 'Science Fiction', value: '3' },
-//        { name: 'Fantasy', value: '4', notAnOption: true },
-//        { name: 'Mystery', value: '5', notAnOption: false }
-//    ];
-//    $scope.myGenre = $scope.genres[0]; // red
-//}
-
+app.controller('GenreCtrl', ['$scope', '$resource',
 
     function ($scope, $resource) {
         var Genres = $resource('/api/genres');
@@ -54,10 +43,22 @@ app.controller('GenreCtrl', ['$scope',
             $scope.genres = genres;
         });
 
-        //  $scope.myGenre = $scope.genres[0];
-    }
+        //$scope.genreSelect = $scope.genres[1];
+     }
+]);
 
+app.controller('ColorCtrl', ['$scope',
 
+    function ($scope) {
+    $scope.genres = [
+        { name: 'Red', genre_id: '1' },
+        { name: 'Blue', genre_id: '2', notAnOption: true },
+        { name: 'Yellow', genre_id: '3' },
+        { name: 'Green', genre_id: '4', notAnOption: true },
+        { name: 'Purple', genre_id: '5', notAnOption: false }
+    ];
+    $scope.genreSelect = $scope.genres[3]; // red
+}
 
 ]);
 

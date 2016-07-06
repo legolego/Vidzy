@@ -4,7 +4,6 @@ var router = express.Router();
 var monk = require('monk');
 var db = monk('localhost:27017/vidzy');
 
-
 router.get('/', function (req, res) {
     var collection = db.get('genres');
     collection.find({}, function (err, genres) {

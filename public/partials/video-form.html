@@ -1,5 +1,6 @@
 <h1>Add a Video</h1>
 
+
 <form>
     <div class="form-group">
         <label>Title</label>
@@ -19,12 +20,12 @@
 
 
 
-    <div class="form-group" ng-controller="GenreCtrl">
+    <div class="form-group" ng-controller="ColorCtrl">
         <p>selected item is : {{genreSelect}}</p>
-        <p> name of selected item is : {{genreSelect.name}} </p>
+        <p> name of selected item is : {{genreSelect.genre_id}}. {{genreSelect.name}} </p>
         <label>
             Genre:
-            <select class="form-control" ng-model="genreSelect" ng-options="genre.name for genre in genres"></select>
+            <select class="form-control" ng-init="genreSelect.genre_id[1]"  ng-model="genreSelect" ng-options="genre.name for genre in genres track by genre.genre_id"></select>
         </label>
     </div>
 
@@ -33,4 +34,5 @@
 
 
     <input type="button" class="btn btn-primary" value="Save" ng-click="save()"></input>
+    <a class="btn btn-default" href="/#/">Home</a>
 </form>
