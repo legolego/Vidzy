@@ -25,7 +25,7 @@
         <p> name of selected item is : {{genreSelect.genre_id}}. {{genreSelect.name}} </p>
         <label>
             Genre:
-            <select class="form-control" ng-model="genreSelect" ng-options="genre.name for genre in genres track by genre.genre_id"></select>
+            <select class="form-control" ng-model="genreSelect.genre_id" ng-options="genre.genre_id as genre.name for genre in genres" ></select>
         </label>
     </div>
 

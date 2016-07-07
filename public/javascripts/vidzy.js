@@ -43,7 +43,8 @@ app.controller('GenreCtrl', ['$scope', '$resource',
             $scope.genres = genres;
         });
 
-        //$scope.genreSelect = $scope.genres[1];
+        //$scope.genreSelect = $scope.genres[1].genre_id;
+        $scope.genreSelect = {genre_id: 3};
      }
 ]);
 
