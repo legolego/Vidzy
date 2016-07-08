@@ -25,6 +25,12 @@ app.config(['$routeProvider', function ($routeProvider) {
         });
 }]);
 
+//multiple factories
+//https://www.google.com/search?q=angular+multiple+resources+to+scope&oq=angular+multiple+resources+&aqs=chrome.2.69i57j69i59l2.21604j0j7&sourceid=chrome&ie=UTF-8
+app.factory('GenresFac', function ($resource) {
+    return $resource("/api/genres");
+});
+
 app.controller('HomeCtrl', ['$scope', '$resource',
     function ($scope, $resource) {
         var Videos = $resource('/api/videos');
@@ -36,7 +42,7 @@ app.controller('HomeCtrl', ['$scope', '$resource',
 
 
 app.controller('GenreCtrl', ['$scope', '$resource',
-
+    //kinda helped: http://plnkr.co/edit/pNEUFrX1Loc7By70d3hi?p=preview
     function ($scope, $resource) {
         var Genres = $resource('/api/genres');
         Genres.query(function (genres) {
@@ -44,7 +50,7 @@ app.controller('GenreCtrl', ['$scope', '$resource',
         });
 
         //$scope.genreSelect = $scope.genres[1].genre_id;
-        $scope.genreSelect = {genre_id: 3};
+        //$scope.genreSelect = {genre_id: 3};
      }
 ]);
 
@@ -63,14 +69,15 @@ app.controller('ColorCtrl', ['$scope',
 
 ]);
 
-app.controller('AddVideoCtrl', ['$scope', '$resource', '$location',
-    function ($scope, $resource, $location) {
+app.controller('AddVideoCtrl', ['$scope', '$resource', '$location', GenresFac,
+    function ($scope, $resource, $location, GenresFac) {
         $scope.save = function () {
             var Videos = $resource('/api/videos');
             Videos.save($scope.video, function () {
                 $location.path('/');
             });
         };
+        $scope.genres
     }]);
 
 app.controller('EditVideoCtrl', ['$scope', '$resource', '$location', '$routeParams',
